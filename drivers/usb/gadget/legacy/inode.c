@@ -1572,10 +1572,6 @@ delegate:
 							w_length);
 				if (value < 0)
 					break;
-<<<<<<< HEAD
-				value = usb_ep_queue (gadget->ep0, dev->req,
-							GFP_ATOMIC);
-=======
 
 				++dev->udc_usage;
 				spin_unlock (&dev->lock);
@@ -1583,7 +1579,7 @@ delegate:
 							GFP_KERNEL);
 				spin_lock (&dev->lock);
 				--dev->udc_usage;
->>>>>>> c2b87de9b5bf... USB: gadgetfs: Fix crash caused by inadequate synchronization
+
 				if (value < 0) {
 					clean_req (gadget->ep0, dev->req);
 					break;
@@ -1606,9 +1602,6 @@ delegate:
 	if (value >= 0 && dev->state != STATE_DEV_SETUP) {
 		req->length = value;
 		req->zero = value < w_length;
-<<<<<<< HEAD
-		value = usb_ep_queue (gadget->ep0, req, GFP_ATOMIC);
-=======
 
 		++dev->udc_usage;
 		spin_unlock (&dev->lock);
@@ -1616,7 +1609,7 @@ delegate:
 		spin_lock(&dev->lock);
 		--dev->udc_usage;
 		spin_unlock(&dev->lock);
->>>>>>> c2b87de9b5bf... USB: gadgetfs: Fix crash caused by inadequate synchronization
+
 		if (value < 0) {
 			DBG (dev, "ep_queue --> %d\n", value);
 			req->status = 0;
