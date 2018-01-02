@@ -1159,6 +1159,8 @@ CONFIG_USB_EXT_TYPE_C_PERICOM=y
 # CONFIG_QPNP_MISC is not set
 # CONFIG_C2PORT is not set
 
+CONFIG_AW8736=y
+
 #
 # EEPROM support
 #
