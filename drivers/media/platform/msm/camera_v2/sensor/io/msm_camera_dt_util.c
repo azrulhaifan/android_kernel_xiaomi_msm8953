@@ -794,7 +794,8 @@ int msm_camera_init_gpio_pin_tbl(struct device_node *of_node,
 		return rc;
 	}
 
-#ifndef CONFIG_MACH_XIAOMI_MARKW	
+#ifndef CONFIG_MACH_XIAOMI_MARKW
+  	rc = of_property_read_u32(of_node, "qcom,gpio-ir-p", &val);		
 	rc = of_property_read_u32(of_node, "qcom,gpio-ir-p", &val);
 	if (rc != -EINVAL) {
 		if (rc < 0) {
