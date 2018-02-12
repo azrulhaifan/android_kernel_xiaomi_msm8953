@@ -43,10 +43,17 @@
         };
         pmi8950_fg: qcom,fg {
             qcom,resume-soc = <99>;
-            qcom,fg-cc-cv-threshold-mv = <4380>;
-            qcom,fg-vbat-estimate-diff-mv = <200>;
-
-
+            qcom,fg-cutoff-voltage-mv = <3400>;
+            qcom,fg-cc-cv-threshold-mv = <4390>;	
+            qcom,fg-vbat-estimate-diff-mv = <3200>;
+            qcom,cold-bat-decidegc = <(0)>;
+            qcom,cool-bat-decidegc = <(100)>;
+            qcom,hot-bat-decidegc = <600>;
+            qcom,warm-bat-decidegc = <450>;
+            qcom,cl-max-increment-deciperc = <1>;
+            qcom,cl-max-decrement-deciperc = <1>;
+            qcom,fg-delta-soc = <1>;
+            qcom,thermal-coefficients = [c2 86 bb 50 cf 37];
         };
         /delete-node/ qcom,leds@a100;
     };
