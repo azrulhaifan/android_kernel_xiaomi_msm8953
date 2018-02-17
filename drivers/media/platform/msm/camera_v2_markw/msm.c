@@ -1084,7 +1084,6 @@ static struct v4l2_file_operations msm_fops = {
 struct msm_session *msm_get_session(unsigned int session_id)
 {
 	struct msm_session *session;
-	struct msm_stream *stream;
 
 	session = msm_queue_find(msm_session_q, struct msm_session,
 		list, __msm_queue_find_session, &session_id);
